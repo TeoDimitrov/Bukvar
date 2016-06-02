@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Bukvar</string>
-    <string name="action_settings">Settings</string>
-    <string name="speech_prompt">Say something&#8230;</string>
-    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
-    <string name="tap_on_mic">Tap on mic to speak</string>
+    <string name="app_name">Буквар</string>
+    <string name="action_settings">Настройки</string>
+    <string name="speech_prompt">Говори сега!&#8230;</string>
+    <string name="speech_not_supported">За съжаление устройстрото не поддържа гласово въвеждане!</string>
+    <string name="tap_on_mic">Натисни микрофона за да говориш</string>
 </resources>
