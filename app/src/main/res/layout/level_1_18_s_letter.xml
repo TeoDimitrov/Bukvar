@@ -4,10 +4,18 @@
     android:background="@color/ColorBackgroundPurple">
 
     <ImageView
+        android:id="@+id/imageView"
+        android:src="@drawable/letter_18s"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView5"
-        android:src="@drawable/letter_18s"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnSpeak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:text="Кажи пак"/>
 </RelativeLayout>
