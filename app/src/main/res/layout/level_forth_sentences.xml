@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d6c18c">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="
+ В четвъртото ниво малките ще се упражняват да свързват думички в цели изречения."
+        android:id="@+id/textView"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:src="@drawable/owl3"
+        android:clickable="false"
+        android:layout_marginBottom="156dp"
+        android:layout_above="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="@dimen/abc_dialog_fixed_width_major"
+        android:layout_height="wrap_content"
+        android:text="Ниво 4"
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="50px"
+        android:layout_marginBottom="93dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Към нивото:"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,20 +30,23 @@ public class LevelManager extends AppCompatActivity {
     private Button btnGoBack;
     private TextView txtFeedback;
     private String userSpeechInput;
+    private TextToSpeech txtToSpeech;
+    private Button btnTextToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstance) {
 
         super.onCreate(savedInstance);
         setContentView(R.layout.level_1_alphabet);
-        Button startFirstLevel=(Button) findViewById(R.id.button_level_1);
+        Button startFirstLevel = (Button) findViewById(R.id.button_level_1);
         final Intent levelOneIntent = new Intent(this, Level1.class);
-        startFirstLevel.setOnClickListener(new View.OnClickListener(){
+        startFirstLevel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(levelOneIntent);
             }
         });
+    }
         /*this.mainActivity = new Intent(this, MainActivity.class);
         this.txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
         this.txtFeedback = (TextView) findViewById(R.id.feedback);
@@ -61,9 +65,27 @@ public class LevelManager extends AppCompatActivity {
                 promptSpeechInput();
             }
         });
-*/
 
-    }
+
+
+       /* this.txtToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    txtToSpeech.setLanguage(Locale.getDefault());
+                }
+            }
+        });
+        this.btnTextToSpeech = (Button) findViewById(R.id.btnTextToSpeech);
+        this.btnTextToSpeech.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String txtToSpeechText = "cat";
+                txtToSpeech.speak(txtToSpeechText,TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+    }*/
 
     private void promptSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -96,15 +118,14 @@ public class LevelManager extends AppCompatActivity {
                     this.userSpeechInput = result.get(0);
                     txtSpeechInput.setText(this.userSpeechInput);
                 }
+
+                if (this.userSpeechInput.toLowerCase().equals("котка")) {
+                    this.txtFeedback.setText("Браво, добре четеш");
+                } else {
+                    this.txtFeedback.setText("Ти каза: " + this.userSpeechInput + ", а не \"Котка\". Пробвай пак! :)");
+                }
                 break;
             }
-
-        }
-
-        if (this.userSpeechInput.toLowerCase().equals("котка")) {
-            this.txtFeedback.setText("Браво, добре четеш");
-        }else {
-            this.txtFeedback.setText("Ти каза: " + this.userSpeechInput + ", а не \"Котка\". Пробвай пак! :)");
         }
     }
 
@@ -130,3 +151,4 @@ public class LevelManager extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
