@@ -1,4 +1,4 @@
-package cyril_and_methodius.bukvar.cyril_and_methodius.bukvar.levels;
+package cyril_and_methodius.bukvar.level_management;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import cyril_and_methodius.bukvar.R;
+import cyril_and_methodius.bukvar.levels.level_1.Level0101;
 
 /**
  * Created by teo on 02/06/16.
@@ -39,7 +40,7 @@ public class LevelManager extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.level_1_alphabet);
         Button startFirstLevel = (Button) findViewById(R.id.button_level_1);
-        final Intent levelOneIntent = new Intent(this, Level1.class);
+        final Intent levelOneIntent = new Intent(this, Level0101.class);
         startFirstLevel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

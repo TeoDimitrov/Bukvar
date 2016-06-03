@@ -1,4 +1,4 @@
-package cyril_and_methodius.bukvar;
+package cyril_and_methodius.bukvar.applicataion_launcher;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import cyril_and_methodius.bukvar.cyril_and_methodius.bukvar.levels.LevelManager;
+import cyril_and_methodius.bukvar.R;
+import cyril_and_methodius.bukvar.level_management.LevelManager;
+import cyril_and_methodius.bukvar.levels.level_1.Level0100;
+import cyril_and_methodius.bukvar.levels.level_1.Level0101;
+import cyril_and_methodius.bukvar.levels.level_1.Level0102;
 
 public class MainActivity extends AppCompatActivity {
     private Intent levelsActivity;
@@ -20,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.levelsActivity = new Intent(this,LevelManager.class);
+        this.levelsActivity = new Intent(this, Level0100.class);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
