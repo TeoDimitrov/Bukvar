@@ -23,6 +23,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".cyril_and_methodius.bukvar.levels.Level1"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
     </application>
 

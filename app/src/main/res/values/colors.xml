@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="white">#ffffff</color>
-    <color name="bg_gradient_start">#31244e</color>
-    <color name="bg_gradient_end">#6b394c</color>
+    <color name="ColorPrimary">#009688</color>
+    <color name="ColorPrimaryDark">#037864</color>
+    <color name="tabsScrollColor">#4DB6AC</color>
+    <color name="colorAccent">#ff81ac</color>
+    <color name="ColorBackgroundRed">#FFCDD2</color>
+    <color name="ColorBackgroundPink">#F8BBD0</color>
+    <color name="ColorBackgroundBlue">#BBDEFB</color>
+    <color name="ColorBackgroundTeal">#B2DFDB</color>
+    <color name="ColorBackgroundLime">#E6EE9C</color>
+    <color name="ColorBackgroundGreen">#c8e6c9</color>
+    <color name="ColorBackgroundDeepOrange">#FFCCBC</color>
+    <color name="ColorBackgroundSoftPurple">#F3E5F5</color>
+    <color name="ColorBackgroundPurple">#E1BEE7</color>
+    <color name="ColorBackgroundAmber">#FFECB3</color>
 </resources>

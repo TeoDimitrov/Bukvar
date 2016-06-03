@@ -2,22 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_gradient_end"
     android:contentDescription="Котка">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="level_1"
-        android:textColor="@color/white"/>
+        android:text="level_1">
+
+    </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Кажи: Котка"
-        android:textSize="30dp"
-        android:textColor="@color/white"/>
+        android:textSize="30dp">
+
+    </TextView>
 
     <TextView
         android:id="@+id/txtSpeechInput"
@@ -26,7 +27,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
-        android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="normal" />
     <TextView
@@ -35,7 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="ок"
-        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="normal" />
 
@@ -60,7 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/tap_on_mic"
-            android:textColor="@color/white"
             android:textSize="15dp"
             android:textStyle="normal" />
     </LinearLayout>
@@ -70,6 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Върни се"
-        android:textColor="@color/bg_gradient_start"/>
+        android:text="Върни се">
+
+    </Button>
 </RelativeLayout>

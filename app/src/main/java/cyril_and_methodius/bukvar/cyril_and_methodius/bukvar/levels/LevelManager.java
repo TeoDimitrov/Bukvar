@@ -1,12 +1,10 @@
 package cyril_and_methodius.bukvar.cyril_and_methodius.bukvar.levels;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ButtonBarLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import cyril_and_methodius.bukvar.MainActivity;
 import cyril_and_methodius.bukvar.R;
 
 /**
@@ -37,8 +34,16 @@ public class LevelManager extends AppCompatActivity {
     protected void onCreate(Bundle savedInstance) {
 
         super.onCreate(savedInstance);
-        setContentView(R.layout.level_1_test);
-        this.mainActivity = new Intent(this, MainActivity.class);
+        setContentView(R.layout.level_1_alphabet);
+        Button startFirstLevel=(Button) findViewById(R.id.button_level_1);
+        final Intent levelOneIntent = new Intent(this, Level1.class);
+        startFirstLevel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(levelOneIntent);
+            }
+        });
+        /*this.mainActivity = new Intent(this, MainActivity.class);
         this.txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
         this.txtFeedback = (TextView) findViewById(R.id.feedback);
         this.btnGoBack = (Button) findViewById(R.id.go_back);
@@ -56,7 +61,7 @@ public class LevelManager extends AppCompatActivity {
                 promptSpeechInput();
             }
         });
-
+*/
 
     }
 

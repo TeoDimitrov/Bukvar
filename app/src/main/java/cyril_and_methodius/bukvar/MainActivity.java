@@ -15,14 +15,16 @@ import cyril_and_methodius.bukvar.cyril_and_methodius.bukvar.levels.LevelManager
 
 public class MainActivity extends AppCompatActivity {
     private Intent levelsActivity;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.levelsActivity = new Intent(this,LevelManager.class);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

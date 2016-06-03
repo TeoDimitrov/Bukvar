@@ -5,48 +5,49 @@
     android:background="#d6c18c">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="
- Във второто ниво, малките ще се упражняват да четат сами срички и да ги свързват в лесни думички."
+        android:text="В първото ниво малките ще се учат на буквите от азбуката чрез забавни картинки"
         android:id="@+id/textView"
         android:gravity="center"
+        android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="41dp">
+
+    </TextView>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
-        android:src="@drawable/owl4"
+        android:src="@drawable/owl5"
         android:clickable="false"
-        android:layout_marginBottom="156dp"
-        android:layout_above="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="194dp"
+        android:layout_above="@+id/button_level_1" />
 
     <Button
         android:layout_width="@dimen/abc_dialog_fixed_width_major"
         android:layout_height="wrap_content"
-        android:text="Ниво 2"
-        android:id="@+id/button"
+        android:text="Към нивото..."
+        android:id="@+id/button_level_1"
         style="@style/Widget.AppCompat.Button.Colored"
         android:textSize="50px"
-        android:layout_marginBottom="93dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Към нивото:"
-        android:id="@+id/textView2"
-        android:layout_above="@+id/button"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ниво 1: Буквичките"
+        android:id="@+id/textView3"
+        android:textSize="60px"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
 

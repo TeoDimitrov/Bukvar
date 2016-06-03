@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#d6c18c">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="В третото ниво малките ще се упражняват да свързват срички в по дълги думички."
+    android:id="@+id/textView"
+    android:gravity="center"
+    android:layout_below="@+id/textView3"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="41dp">
+
+</TextView>
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/imageView4"
+    android:src="@drawable/owl"
+    android:clickable="false"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginBottom="194dp"
+    android:layout_above="@+id/button_level_3" />
+
+<Button
+    android:layout_width="@dimen/abc_dialog_fixed_width_major"
+    android:layout_height="wrap_content"
+    android:text="Към нивото..."
+    android:id="@+id/button_level_3"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:textSize="50px"
+    android:layout_below="@+id/textView"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="41dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Ниво 3: Думички"
+    android:id="@+id/textView3"
+    android:textSize="60px"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
