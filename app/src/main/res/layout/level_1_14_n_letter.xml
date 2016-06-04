@@ -15,7 +15,9 @@
         android:id="@+id/btnSpeak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Повтори"
+        android:textSize="60px"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:text="Кажи пак"/>
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -4,7 +4,7 @@
     android:background="@color/ColorBackgroundPink">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView"
         android:src="@drawable/letter_12l"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +15,9 @@
         android:id="@+id/btnSpeak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Повтори"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:text="Кажи пак"/>
+        android:textSize="60px"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 </RelativeLayout>

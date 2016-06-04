@@ -4,14 +4,15 @@
     <color name="ColorPrimaryDark">#037864</color>
     <color name="tabsScrollColor">#4DB6AC</color>
     <color name="colorAccent">#ff81ac</color>
-    <color name="ColorBackgroundRed">#FFCDD2</color>
+    <color name="ColorBackgroundRed">#FFEBEE</color>
     <color name="ColorBackgroundPink">#FCE4EC</color>
-    <color name="ColorBackgroundBlue">#BBDEFB</color>
-    <color name="ColorBackgroundTeal">#B2DFDB</color>
+    <color name="ColorBackgroundBlue">#E3F2FD</color>
+    <color name="ColorBackgroundTeal">#E0F2F1</color>
     <color name="ColorBackgroundLime">#E6EE9C</color>
-    <color name="ColorBackgroundGreen">#c8e6c9</color>
+    <color name="ColorBackgroundGreen">#E8F5E9</color>
     <color name="ColorBackgroundDeepOrange">#FFCCBC</color>
     <color name="ColorBackgroundSoftPurple">#F3E5F5</color>
     <color name="ColorBackgroundPurple">#E1BEE7</color>
-    <color name="ColorBackgroundAmber">#FFECB3</color>
+    <color name="ColorBackgroundAmber">#FFF8E1</color>
+    <color name="ColorBackgroundBrown">#d6c18c</color>
 </resources>
