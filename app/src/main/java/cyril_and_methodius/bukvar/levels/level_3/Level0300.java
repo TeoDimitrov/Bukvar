@@ -48,6 +48,12 @@ public class Level0300 extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         this.gestureDetectorCompat.onTouchEvent(event);
         return super.onTouchEvent(event);
