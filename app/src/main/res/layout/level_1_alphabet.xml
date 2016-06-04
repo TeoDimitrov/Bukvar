@@ -29,10 +29,10 @@
         android:layout_alignParentStart="true" />
 
     <Button
+        android:text="Към нивото..."
+        android:id="@+id/go_to_level"
         android:layout_width="@dimen/abc_dialog_fixed_width_major"
         android:layout_height="wrap_content"
-        android:text="Към нивото..."
-        android:id="@+id/button_level_1"
         style="@style/Widget.AppCompat.Button.Colored"
         android:textSize="50px"
         android:layout_below="@+id/textView"

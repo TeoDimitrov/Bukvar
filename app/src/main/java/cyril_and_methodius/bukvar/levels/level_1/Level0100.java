@@ -6,6 +6,7 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.Button;
 
 import cyril_and_methodius.bukvar.R;
 
@@ -15,12 +16,14 @@ import cyril_and_methodius.bukvar.R;
 public class Level0100 extends AppCompatActivity {
     private Intent nextActivity;
     private GestureDetectorCompat gestureDetectorCompat;
+    private Button btnGoToLevel;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_1_alphabet);
-        this.nextActivity = new Intent(this, Level0101.class);
+        this.btnGoToLevel = (Button) findViewById(R.id.go_to_level);
+        this.nextActivity = new Intent(this, Level0200.class);
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
     }
 

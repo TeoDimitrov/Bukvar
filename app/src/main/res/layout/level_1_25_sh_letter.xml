@@ -5,7 +5,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:src="@drawable/letter_26sht"
+        android:src="@drawable/letter_25sh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
