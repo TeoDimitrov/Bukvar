@@ -1,4 +1,4 @@
-package cyril_and_methodius.bukvar.levels.level_3;
+package cyril_and_methodius.bukvar.levels.level_4;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,18 +8,21 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 
 import cyril_and_methodius.bukvar.R;
-import cyril_and_methodius.bukvar.levels.level_4.Level_04;
+import cyril_and_methodius.bukvar.levels.level_2.Level0200;
+import cyril_and_methodius.bukvar.levels.level_3.Level0300;
 
-
-public class Level_03 extends AppCompatActivity {
-    private Intent nextActivity;
+/**
+ * Created by Teo on 6/3/2016.
+ */
+public class Level0400 extends AppCompatActivity {
     private GestureDetectorCompat gestureDetectorCompat;
+    private Intent previousActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_3_long_words);
-        nextActivity = new Intent(this, Level_04.class);
+        setContentView(R.layout.level_4_sentences);
+        previousActivity = new Intent(this, Level0300.class);
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
     }
 
@@ -36,10 +39,11 @@ public class Level_03 extends AppCompatActivity {
                                float velocityX, float velocityY) {
 
             if (event2.getX() < event1.getX()) {
-                startActivity(nextActivity);
+                //startActivity(nextActivity);
+            } else if (event2.getX() > event1.getX()) {
+                startActivity(previousActivity);
             }
             return true;
         }
     }
 }
-

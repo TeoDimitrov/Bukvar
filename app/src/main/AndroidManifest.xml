@@ -149,18 +149,18 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
-            android:name=".levels.level_2.Level_02"
+            android:name=".levels.level_2.Level0200"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
-            android:name=".levels.level_3.Level_03"
+            android:name=".levels.level_3.Level0300"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
-            android:name=".levels.level_4.Level_04"
+            android:name=".levels.level_4.Level0400"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
