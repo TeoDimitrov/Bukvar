@@ -28,10 +28,8 @@ public class Level0101 extends AppCompatActivity {
     private Button btnSpeak;
     private String userSpeechInput;
     private Intent nextActivity;
-    private Intent previousActivity;
     private Intent resultActivity;
     private Class nextActivityClass;
-    private Class previusActivityClass;
     private GestureDetectorCompat gestureDetectorCompat;
     private ImageView imageView;
     private MediaPlayer mediaPlayer;
@@ -65,8 +63,6 @@ public class Level0101 extends AppCompatActivity {
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
         this.nextActivityClass = Level0102.class;
         this.nextActivity = new Intent(this, this.nextActivityClass);
-        this.previusActivityClass = Level0100.class;
-        this.previousActivity = new Intent(this, this.previusActivityClass);
 
         //Show Results
         this.resultActivity = new Intent(this, ResultManager.class);
@@ -124,8 +120,6 @@ public class Level0101 extends AppCompatActivity {
 
             if (event2.getX() < event1.getX()) {
                 startActivity(nextActivity);
-            } else if (event1.getX() < event2.getX()) {
-                startActivity(previousActivity);
             }
 
             return true;
