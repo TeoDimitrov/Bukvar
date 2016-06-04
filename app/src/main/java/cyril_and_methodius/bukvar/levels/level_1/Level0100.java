@@ -6,10 +6,7 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-<<<<<<< HEAD
-=======
 import android.view.View;
->>>>>>> d2e3e0851ec0dbcd590709b012336e176a3a4ab3
 import android.widget.Button;
 
 import cyril_and_methodius.bukvar.R;
@@ -18,19 +15,16 @@ import cyril_and_methodius.bukvar.levels.level_2.Level0200;
 public class Level0100 extends AppCompatActivity {
     private Intent nextActivity;
     private GestureDetectorCompat gestureDetectorCompat;
-<<<<<<< HEAD
-    private Button btnGoToLevel;
-=======
     private Button bntGoToLevels;
     private Intent goToLevel0101;
->>>>>>> d2e3e0851ec0dbcd590709b012336e176a3a4ab3
+
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_1_alphabet);
         this.goToLevel0101 = new Intent(this, Level0101.class);
-        this.bntGoToLevels =(Button) findViewById(R.id.button_level_1);
+        this.bntGoToLevels =(Button) findViewById(R.id.go_to_level);
         this.bntGoToLevels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
