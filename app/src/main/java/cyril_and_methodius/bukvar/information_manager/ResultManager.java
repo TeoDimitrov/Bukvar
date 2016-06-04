@@ -1,6 +1,7 @@
 package cyril_and_methodius.bukvar.information_manager;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ public final class ResultManager extends AppCompatActivity {
     private static final int DELAY = 2000;
     private static Class nextActivity;
     private static String resultType;
+    private MediaPlayer mediaPlayer;
 
     public ResultManager() {
         super();
@@ -31,8 +33,12 @@ public final class ResultManager extends AppCompatActivity {
         boolean isFailure = ResultManager.resultType.equals("Failure");
         if (isSuccess) {
             this.setContentView(R.layout.level_results_success);
+            this.mediaPlayer = mediaPlayer.create(ResultManager.this, R.raw.success1);
+            this.startMediaPlayer();
         } else if (isFailure) {
             this.setContentView(R.layout.level_results_failure);
+            this.mediaPlayer = mediaPlayer.create(ResultManager.this, R.raw.fail);
+            this.startMediaPlayer();
         }
 
         new Handler().postDelayed(new Runnable() {
@@ -43,6 +49,12 @@ public final class ResultManager extends AppCompatActivity {
             }
         }, ResultManager.DELAY);
     }
+
+    private void startMediaPlayer() {
+        this.mediaPlayer.start();
+    }
+
+
 
     public static void setNextActivity(Class nextActivity) {
         ResultManager.nextActivity = nextActivity;
