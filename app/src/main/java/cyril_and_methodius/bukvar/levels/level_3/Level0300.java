@@ -40,8 +40,7 @@ public class Level0300 extends AppCompatActivity {
 
             if (event2.getX() < event1.getX()) {
                 startActivity(nextActivity);
-            }
-            else if (event2.getX()>event1.getX()){
+            } else if (event2.getX() > event1.getX()) {
                 startActivity(previousActivity);
             }
             return true;

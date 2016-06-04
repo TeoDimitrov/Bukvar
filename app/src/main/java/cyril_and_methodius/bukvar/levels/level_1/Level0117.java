@@ -3,7 +3,10 @@ package cyril_and_methodius.bukvar.levels.level_1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,14 +15,14 @@ import java.util.ArrayList;
 import cyril_and_methodius.bukvar.R;
 import cyril_and_methodius.bukvar.speech_recognition.SpeechRecognition;
 
-/**
- * Created by Teo on 6/3/2016.
- */
 public class Level0117 extends AppCompatActivity {
     private static final String WORD = "рак";
     private SpeechRecognition speechRecognition;
     private Button btnSpeak;
     private String userSpeechInput;
+    private Intent nextActivity;
+    private Intent previousActivity;
+    private GestureDetectorCompat gestureDetectorCompat;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -33,6 +36,9 @@ public class Level0117 extends AppCompatActivity {
                 speechRecognition.promptSpeechInput();
             }
         });
+        this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
+        nextActivity = new Intent(this, Level0118.class);
+        previousActivity = new Intent(this, Level0116.class);
     }
 
     @Override
@@ -55,6 +61,27 @@ public class Level0117 extends AppCompatActivity {
 
                 break;
             }
+        }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gestureDetectorCompat.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2,
+                               float velocityX, float velocityY) {
+
+            if (event2.getX() < event1.getX()) {
+                startActivity(nextActivity);
+            } else if (event2.getX() > event1.getX()) {
+                startActivity(previousActivity);
+            }
+            return true;
         }
     }
 }
