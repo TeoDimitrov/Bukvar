@@ -39,7 +39,7 @@ public class LevelManager extends AppCompatActivity {
 
         super.onCreate(savedInstance);
         setContentView(R.layout.level_1_alphabet);
-        Button startFirstLevel = (Button) findViewById(R.id.button_level_1);
+        Button startFirstLevel = (Button) findViewById(R.id.go_to_level);
         final Intent levelOneIntent = new Intent(this, Level0101.class);
         startFirstLevel.setOnClickListener(new View.OnClickListener() {
             @Override

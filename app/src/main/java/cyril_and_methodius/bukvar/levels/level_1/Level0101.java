@@ -13,6 +13,8 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import cyril_and_methodius.bukvar.R;
+import cyril_and_methodius.bukvar.applicataion_launcher.MainActivity;
+import cyril_and_methodius.bukvar.information_manager.ResultManager;
 import cyril_and_methodius.bukvar.speech_recognition.SpeechRecognition;
 
 /**
@@ -20,12 +22,15 @@ import cyril_and_methodius.bukvar.speech_recognition.SpeechRecognition;
  */
 public class Level0101 extends AppCompatActivity {
     private static final String WORD = "агне";
+    private int points = 1;
     private SpeechRecognition speechRecognition;
     private Button btnSpeak;
     private String userSpeechInput;
     private Intent nextActivity;
     private Intent previousActivity;
+    private Intent resultActivity;
     private GestureDetectorCompat gestureDetectorCompat;
+    private ResultManager resultManager;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class Level0101 extends AppCompatActivity {
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
         this.nextActivity = new Intent(this, Level0102.class);
         this.previousActivity = new Intent(this, Level0100.class);
+        this.resultManager = new ResultManager(this.getNextActivity());
+        this.resultActivity = new Intent(this, ResultManager.class);
     }
 
     @Override
@@ -57,7 +64,9 @@ public class Level0101 extends AppCompatActivity {
                     this.userSpeechInput = result.get(0);
 
                     if (this.userSpeechInput.toLowerCase().equals(this.WORD)) {
-                        // if match
+                        MainActivity.getUser().setLevelOneCurrentPoints(points);
+                        this.points=0;
+                        this.startActivity(this.resultActivity);
                     } else {
                         // if not match
                     }
@@ -88,5 +97,9 @@ public class Level0101 extends AppCompatActivity {
 
             return true;
         }
+    }
+
+    private Intent getNextActivity() {
+        return this.nextActivity;
     }
 }

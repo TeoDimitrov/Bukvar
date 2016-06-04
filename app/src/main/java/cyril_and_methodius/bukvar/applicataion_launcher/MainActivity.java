@@ -16,14 +16,18 @@ import cyril_and_methodius.bukvar.level_management.LevelManager;
 import cyril_and_methodius.bukvar.levels.level_1.Level0100;
 import cyril_and_methodius.bukvar.levels.level_1.Level0101;
 import cyril_and_methodius.bukvar.levels.level_1.Level0102;
+import cyril_and_methodius.bukvar.users.User;
 
 public class MainActivity extends AppCompatActivity {
+    private static Intent runningActivity;
     private Intent levelsActivity;
     private Toolbar toolbar;
+    private static User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.user = new User();
         this.levelsActivity = new Intent(this, Level0100.class);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
@@ -68,5 +72,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static Intent getRunningActivity() {
+        return runningActivity;
+    }
+
+    public static void setRunningActivity(Intent runningActivity) {
+        MainActivity.runningActivity = runningActivity;
     }
 }
