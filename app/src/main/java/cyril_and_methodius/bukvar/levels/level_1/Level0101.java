@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import cyril_and_methodius.bukvar.R;
 import cyril_and_methodius.bukvar.speech_recognition.SpeechRecognition;
 
-/**
- * Created by Teo on 6/3/2016.
- */
 public class Level0101 extends AppCompatActivity {
     private static final String WORD = "агне";
     private SpeechRecognition speechRecognition;
