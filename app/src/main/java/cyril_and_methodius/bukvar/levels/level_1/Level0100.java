@@ -8,7 +8,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 
 import cyril_and_methodius.bukvar.R;
-import cyril_and_methodius.bukvar.levels.level_2.Level_02;
+import cyril_and_methodius.bukvar.levels.level_2.Level0200;
 
 
 public class Level0100 extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class Level0100 extends AppCompatActivity {
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_1_alphabet);
-        this.nextActivity = new Intent(this, Level_02.class);
+        this.nextActivity = new Intent(this, Level0200.class);
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
     }
 
