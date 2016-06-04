@@ -34,8 +34,6 @@ public class Level0101 extends AppCompatActivity {
     private Class nextActivityClass;
     private Class previusActivityClass;
     private GestureDetectorCompat gestureDetectorCompat;
-    private MediaPlayer imageMediaPlayer;
-    private String audio;
     private ImageView imageView;
 
     @Override
@@ -44,8 +42,6 @@ public class Level0101 extends AppCompatActivity {
         setContentView(R.layout.level_1_01_a_letter);
 
         //Image Media Player
-        this.imageMediaPlayer = new MediaPlayer();
-        this.audio = "";
         this.imageView = (ImageView) findViewById(R.id.imageView);
         this.imageView.setOnClickListener(new OnClickListener() {
             @Override
@@ -140,12 +136,6 @@ public class Level0101 extends AppCompatActivity {
     }
 
     private void startMediaPlayer(){
-        try {
-            imageMediaPlayer.setDataSource(audio);
-            imageMediaPlayer.prepare();
-            imageMediaPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //implement
     }
 }
