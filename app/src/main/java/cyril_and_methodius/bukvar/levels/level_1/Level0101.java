@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import cyril_and_methodius.bukvar.R;
@@ -29,12 +28,11 @@ public class Level0101 extends AppCompatActivity {
     private Button btnSpeak;
     private String userSpeechInput;
     private Intent nextActivity;
-    private Intent previousActivity;
     private Intent resultActivity;
     private Class nextActivityClass;
-    private Class previusActivityClass;
     private GestureDetectorCompat gestureDetectorCompat;
     private ImageView imageView;
+    private MediaPlayer mediaPlayer;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -42,6 +40,7 @@ public class Level0101 extends AppCompatActivity {
         setContentView(R.layout.level_1_01_a_letter);
 
         //Image Media Player
+        mediaPlayer = MediaPlayer.create(this, R.raw.level_01);
         this.imageView = (ImageView) findViewById(R.id.imageView);
         this.imageView.setOnClickListener(new OnClickListener() {
             @Override
@@ -64,8 +63,6 @@ public class Level0101 extends AppCompatActivity {
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
         this.nextActivityClass = Level0102.class;
         this.nextActivity = new Intent(this, this.nextActivityClass);
-        this.previusActivityClass = Level0100.class;
-        this.previousActivity = new Intent(this, this.previusActivityClass);
 
         //Show Results
         this.resultActivity = new Intent(this, ResultManager.class);
@@ -123,8 +120,6 @@ public class Level0101 extends AppCompatActivity {
 
             if (event2.getX() < event1.getX()) {
                 startActivity(nextActivity);
-            } else if (event1.getX() < event2.getX()) {
-                startActivity(previousActivity);
             }
 
             return true;
@@ -136,6 +131,6 @@ public class Level0101 extends AppCompatActivity {
     }
 
     private void startMediaPlayer(){
-        //implement
+        mediaPlayer.start();
     }
 }
