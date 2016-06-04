@@ -20,7 +20,7 @@ import cyril_and_methodius.bukvar.information_manager.ResultManager;
 import cyril_and_methodius.bukvar.speech_recognition.SpeechRecognition;
 
 public class Level0110 extends AppCompatActivity {
-    private static final String WORD = "йойо";
+    private static final String WORD = "йо йо";
     private int points = 1;
     private SpeechRecognition speechRecognition;
     private Button btnSpeak;

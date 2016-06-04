@@ -15,7 +15,8 @@ import cyril_and_methodius.bukvar.R;
  * Created by teo on 03/06/16.
  */
 public class SpeechRecognition extends FragmentActivity{
-    public static final int REQ_CODE_SPEECH_INPUT = 100;
+    public final int REQ_CODE_SPEECH_INPUT = 100;
+    public final int DELAYED_PROMPT = 5000;
     private AppCompatActivity appCompatActivity;
 
     public SpeechRecognition(AppCompatActivity appCompatActivity){
@@ -28,8 +29,10 @@ public class SpeechRecognition extends FragmentActivity{
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "bg-BG");
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"talk");
-               // getString(R.string.speech_prompt));
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS,this.DELAYED_PROMPT);
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS,this.DELAYED_PROMPT);
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, this.DELAYED_PROMPT);
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,R.string.speech_prompt);
         try {
             appCompatActivity.startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {

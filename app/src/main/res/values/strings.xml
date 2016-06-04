@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Буквар</string>
     <string name="action_settings">Настройки</string>
-    <string name="speech_prompt">Говори сега!&#8230;</string>
+    <string name="speech_prompt">Говори сега!</string>
     <string name="speech_not_supported">За съжаление устройстрото не поддържа гласово въвеждане!</string>
     <string name="tap_on_mic">Натисни микрофона за да говориш</string>
 </resources>
