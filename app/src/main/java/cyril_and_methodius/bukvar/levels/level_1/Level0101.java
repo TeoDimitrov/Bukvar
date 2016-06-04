@@ -1,6 +1,7 @@
 package cyril_and_methodius.bukvar.levels.level_1;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v4.view.GestureDetectorCompat;
@@ -9,13 +10,17 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import cyril_and_methodius.bukvar.R;
 import cyril_and_methodius.bukvar.applicataion_launcher.MainActivity;
 import cyril_and_methodius.bukvar.information_manager.ResultManager;
 import cyril_and_methodius.bukvar.speech_recognition.SpeechRecognition;
+
+import static android.view.View.*;
 
 public class Level0101 extends AppCompatActivity {
     private static final String WORD = "агне";
@@ -29,22 +34,37 @@ public class Level0101 extends AppCompatActivity {
     private Class nextActivityClass;
     private Class previusActivityClass;
     private GestureDetectorCompat gestureDetectorCompat;
+    private MediaPlayer imageMediaPlayer;
+    private String audio;
+    private ImageView imageView;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_1_01_a_letter);
-        //Speech Recognition
-        this.speechRecognition = new SpeechRecognition(this);
-        this.btnSpeak = (Button) findViewById(R.id.btnSpeak);
-        this.btnSpeak.setOnClickListener(new View.OnClickListener() {
+
+        //Image Media Player
+        this.imageMediaPlayer = new MediaPlayer();
+        this.audio = "";
+        this.imageView = (ImageView) findViewById(R.id.imageView);
+        this.imageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                speechRecognition.promptSpeechInput();
+               startMediaPlayer();
             }
         });
 
-        //Change Activity
+        //Speech Recognition
+        this.speechRecognition = new SpeechRecognition(this);
+        this.btnSpeak = (Button) findViewById(R.id.btnSpeak);
+        this.btnSpeak.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSpeechRecognition();
+            }
+        });
+
+        //Change Activity on Swipe
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
         this.nextActivityClass = Level0102.class;
         this.nextActivity = new Intent(this, this.nextActivityClass);
@@ -67,20 +87,23 @@ public class Level0101 extends AppCompatActivity {
                     this.userSpeechInput = result.get(0);
 
                     if (this.userSpeechInput.toLowerCase().equals(this.WORD)) {
-                        //if match
+                        //If match
                         //Points
                         MainActivity.getUser().setLevelOneCurrentPoints(points);
                         this.points = 0;
+
                         //Set Results
                         ResultManager.setNextActivity(this.nextActivityClass);
                         ResultManager.setResultType("Success");
                         //Set Activity
+
                         this.startActivity(this.resultActivity);
                     } else {
-                        // if not match
+                        // If not match
                         //Set Results
                         ResultManager.setNextActivity(this.getClass());
                         ResultManager.setResultType("Failure");
+
                         //Set Activity
                         this.startActivity(this.resultActivity);
                     }
@@ -109,6 +132,20 @@ public class Level0101 extends AppCompatActivity {
             }
 
             return true;
+        }
+    }
+
+    private void startSpeechRecognition(){
+        speechRecognition.promptSpeechInput();
+    }
+
+    private void startMediaPlayer(){
+        try {
+            imageMediaPlayer.setDataSource(audio);
+            imageMediaPlayer.prepare();
+            imageMediaPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
