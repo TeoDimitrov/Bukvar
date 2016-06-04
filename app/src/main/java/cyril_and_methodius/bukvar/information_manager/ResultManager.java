@@ -2,6 +2,7 @@ package cyril_and_methodius.bukvar.information_manager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import cyril_and_methodius.bukvar.R;
@@ -9,32 +10,33 @@ import cyril_and_methodius.bukvar.R;
 /**
  * Created by teo on 04/06/16.
  */
-public class ResultManager extends AppCompatActivity {
+public final class ResultManager extends AppCompatActivity {
     private static final int DELAY = 5000;
-    private Intent nextActivity;
+    private static Class nextActivity;
 
-    public ResultManager(Intent nextActivity){
-        this.nextActivity = nextActivity;
+    public ResultManager(){
+        super();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.level_results);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        try {
-            Thread.sleep(this.DELAY);
-            this.startActivity(this.nextActivity);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        this.setContentView(R.layout.level_results);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                startActivity(new Intent(ResultManager.this, ResultManager.nextActivity));
+            }
+        }, 2000);
     }
 
-    public Intent getRunningActivity() {
-        return nextActivity;
+    public static void setNextActivity(Class nextActivity) {
+        ResultManager.nextActivity = nextActivity;
     }
 }
