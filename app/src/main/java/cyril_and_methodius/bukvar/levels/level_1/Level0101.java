@@ -52,7 +52,6 @@ public class Level0101 extends AppCompatActivity {
         this.previousActivity = new Intent(this, this.previusActivityClass);
 
         //Show Results
-        ResultManager.setNextActivity(this.nextActivityClass);
         this.resultActivity = new Intent(this, ResultManager.class);
     }
 
@@ -68,11 +67,22 @@ public class Level0101 extends AppCompatActivity {
                     this.userSpeechInput = result.get(0);
 
                     if (this.userSpeechInput.toLowerCase().equals(this.WORD)) {
+                        //if match
+                        //Points
                         MainActivity.getUser().setLevelOneCurrentPoints(points);
                         this.points = 0;
+                        //Set Results
+                        ResultManager.setNextActivity(this.nextActivityClass);
+                        ResultManager.setResultType("Success");
+                        //Set Activity
                         this.startActivity(this.resultActivity);
                     } else {
                         // if not match
+                        //Set Results
+                        ResultManager.setNextActivity(this.getClass());
+                        ResultManager.setResultType("Failure");
+                        //Set Activity
+                        this.startActivity(this.resultActivity);
                     }
                 }
                 break;

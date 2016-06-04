@@ -11,10 +11,11 @@ import cyril_and_methodius.bukvar.R;
  * Created by teo on 04/06/16.
  */
 public final class ResultManager extends AppCompatActivity {
-    private static final int DELAY = 5000;
+    private static final int DELAY = 2000;
     private static Class nextActivity;
+    private static String resultType;
 
-    public ResultManager(){
+    public ResultManager() {
         super();
     }
 
@@ -26,17 +27,28 @@ public final class ResultManager extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        this.setContentView(R.layout.level_results);
+        boolean isSuccess = ResultManager.resultType.equals("Success");
+        boolean isFailure = ResultManager.resultType.equals("Failure");
+        if (isSuccess) {
+            this.setContentView(R.layout.level_results_success);
+        } else if (isFailure) {
+            this.setContentView(R.layout.level_results_failure);
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
                 startActivity(new Intent(ResultManager.this, ResultManager.nextActivity));
             }
-        }, 2000);
+        }, ResultManager.DELAY);
     }
 
     public static void setNextActivity(Class nextActivity) {
         ResultManager.nextActivity = nextActivity;
+    }
+
+    public static void setResultType(String resultType) {
+        ResultManager.resultType = resultType;
     }
 }
