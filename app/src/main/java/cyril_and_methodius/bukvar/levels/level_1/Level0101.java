@@ -26,26 +26,32 @@ public class Level0101 extends AppCompatActivity {
     private Intent nextActivity;
     private Intent previousActivity;
     private Intent resultActivity;
+    private Class nextActivityClass;
+    private Class previusActivityClass;
     private GestureDetectorCompat gestureDetectorCompat;
-    private ResultManager resultManager;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_1_01_a_letter);
+        //Speech Recognition
         this.speechRecognition = new SpeechRecognition(this);
         this.btnSpeak = (Button) findViewById(R.id.btnSpeak);
-        this.btnSpeak.setOnClickListener(new View.OnClickListener(){
+        this.btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 speechRecognition.promptSpeechInput();
             }
         });
 
+        //Change Activity
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
-        this.nextActivity = new Intent(this, Level0102.class);
-        this.previousActivity = new Intent(this, Level0100.class);
-        this.resultManager = new ResultManager(this.getNextActivity());
+        this.nextActivityClass = Level0102.class;
+        this.nextActivity = new Intent(this, this.nextActivityClass);
+        this.previusActivityClass = Level0100.class;
+        this.previousActivity = new Intent(this, this.previusActivityClass);
+
+        //Show Results
         this.resultActivity = new Intent(this, ResultManager.class);
     }
 
@@ -61,14 +67,24 @@ public class Level0101 extends AppCompatActivity {
                     this.userSpeechInput = result.get(0);
 
                     if (this.userSpeechInput.toLowerCase().equals(this.WORD)) {
+                        //if match
+                        //Points
                         MainActivity.getUser().setLevelOneCurrentPoints(points);
-                        this.points=0;
+                        this.points = 0;
+                        //Set Results
+                        ResultManager.setNextActivity(this.nextActivityClass);
+                        ResultManager.setResultType("Success");
+                        //Set Activity
                         this.startActivity(this.resultActivity);
                     } else {
                         // if not match
+                        //Set Results
+                        ResultManager.setNextActivity(this.getClass());
+                        ResultManager.setResultType("Failure");
+                        //Set Activity
+                        this.startActivity(this.resultActivity);
                     }
                 }
-
                 break;
             }
         }
@@ -88,15 +104,11 @@ public class Level0101 extends AppCompatActivity {
 
             if (event2.getX() < event1.getX()) {
                 startActivity(nextActivity);
-            }else if(event1.getX() < event2.getX()){
+            } else if (event1.getX() < event2.getX()) {
                 startActivity(previousActivity);
             }
 
             return true;
         }
-    }
-
-    private Intent getNextActivity() {
-        return this.nextActivity;
     }
 }
