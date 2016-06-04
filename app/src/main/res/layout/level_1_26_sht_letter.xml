@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/ColorBackgroundAmber">
+    android:background="@color/ColorBackgroundRed">
 
     <ImageView
         android:id="@+id/imageView"
-        android:src="@drawable/letter_25sh"
+        android:src="@drawable/letter_26sht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"

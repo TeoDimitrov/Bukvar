@@ -48,45 +48,6 @@ public class LevelManager extends AppCompatActivity {
             }
         });
     }
-        /*this.mainActivity = new Intent(this, MainActivity.class);
-        this.txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
-        this.txtFeedback = (TextView) findViewById(R.id.feedback);
-        this.btnGoBack = (Button) findViewById(R.id.go_back);
-        this.btnGoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(mainActivity);
-            }
-        });
-
-        this.btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
-        this.btnSpeak.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                promptSpeechInput();
-            }
-        });
-
-
-
-       /* this.txtToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-                    txtToSpeech.setLanguage(Locale.getDefault());
-                }
-            }
-        });
-        this.btnTextToSpeech = (Button) findViewById(R.id.btnTextToSpeech);
-        this.btnTextToSpeech.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                String txtToSpeechText = "cat";
-                txtToSpeech.speak(txtToSpeechText,TextToSpeech.QUEUE_FLUSH, null);
-            }
-        });
-
-    }*/
 
     private void promptSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);

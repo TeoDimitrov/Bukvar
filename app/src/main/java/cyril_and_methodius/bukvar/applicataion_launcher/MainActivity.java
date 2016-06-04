@@ -1,6 +1,7 @@
 package cyril_and_methodius.bukvar.applicataion_launcher;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +13,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import cyril_and_methodius.bukvar.R;
-import cyril_and_methodius.bukvar.level_management.LevelManager;
 import cyril_and_methodius.bukvar.levels.level_1.Level0100;
-import cyril_and_methodius.bukvar.levels.level_1.Level0101;
-import cyril_and_methodius.bukvar.levels.level_1.Level0102;
 import cyril_and_methodius.bukvar.users.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent levelsActivity;
     private Toolbar toolbar;
     private static User user;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +48,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(levelsActivity);
             }
         });
+        mp = MediaPlayer.create(MainActivity.this, R.raw.main);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mp.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp.stop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
     }
 
     @Override

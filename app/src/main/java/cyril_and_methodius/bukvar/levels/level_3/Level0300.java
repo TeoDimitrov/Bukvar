@@ -1,6 +1,7 @@
 package cyril_and_methodius.bukvar.levels.level_3;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class Level0300 extends AppCompatActivity {
     private Intent nextActivity;
     private Intent previousActivity;
     private GestureDetectorCompat gestureDetectorCompat;
+    private MediaPlayer mp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,25 @@ public class Level0300 extends AppCompatActivity {
         nextActivity = new Intent(this, Level0400.class);
         previousActivity = new Intent(this, Level0200.class);
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
+        mp = MediaPlayer.create(Level0300.this, R.raw.level_03);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mp.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp.stop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
     }
 
     @Override
