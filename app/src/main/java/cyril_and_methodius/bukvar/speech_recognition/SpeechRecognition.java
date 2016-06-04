@@ -15,8 +15,8 @@ import cyril_and_methodius.bukvar.R;
  * Created by teo on 03/06/16.
  */
 public class SpeechRecognition extends FragmentActivity{
-    public final int REQ_CODE_SPEECH_INPUT = 100;
-    public final int DELAYED_PROMPT = 5000;
+    public static final int REQ_CODE_SPEECH_INPUT = 100;
+    public static final int DELAYED_PROMPT = 5000;
     private AppCompatActivity appCompatActivity;
 
     public SpeechRecognition(AppCompatActivity appCompatActivity){
