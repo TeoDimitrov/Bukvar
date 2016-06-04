@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import cyril_and_methodius.bukvar.R;
@@ -35,6 +34,7 @@ public class Level0101 extends AppCompatActivity {
     private Class previusActivityClass;
     private GestureDetectorCompat gestureDetectorCompat;
     private ImageView imageView;
+    private MediaPlayer mediaPlayer;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class Level0101 extends AppCompatActivity {
         setContentView(R.layout.level_1_01_a_letter);
 
         //Image Media Player
+        mediaPlayer = MediaPlayer.create(this, R.raw.level_01);
         this.imageView = (ImageView) findViewById(R.id.imageView);
         this.imageView.setOnClickListener(new OnClickListener() {
             @Override
@@ -136,6 +137,6 @@ public class Level0101 extends AppCompatActivity {
     }
 
     private void startMediaPlayer(){
-        //implement
+        mediaPlayer.start();
     }
 }
