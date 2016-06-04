@@ -1,4 +1,4 @@
-package cyril_and_methodius.bukvar.levels.level_1;
+package cyril_and_methodius.bukvar.levels.level_3;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,22 +6,20 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.widget.Button;
 
 import cyril_and_methodius.bukvar.R;
-import cyril_and_methodius.bukvar.levels.level_2.Level_02;
+import cyril_and_methodius.bukvar.levels.level_4.Level_04;
 
 
-public class Level0100 extends AppCompatActivity {
+public class Level_03 extends AppCompatActivity {
     private Intent nextActivity;
     private GestureDetectorCompat gestureDetectorCompat;
-    private Button btnGoToLevel;
 
     @Override
-    public void onCreate(final Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_1_alphabet);
-        this.nextActivity = new Intent(this, Level_02.class);
+        setContentView(R.layout.level_3_long_words);
+        nextActivity = new Intent(this, Level_04.class);
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
     }
 
@@ -44,3 +42,4 @@ public class Level0100 extends AppCompatActivity {
         }
     }
 }
+
