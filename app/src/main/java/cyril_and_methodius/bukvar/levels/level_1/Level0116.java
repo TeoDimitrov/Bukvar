@@ -40,7 +40,7 @@ public class Level0116 extends AppCompatActivity {
         setContentView(R.layout.level_1_16_p_letter);
 
         //Image Media Player
-        mediaPlayer = MediaPlayer.create(this, R.raw.level_01);
+        mediaPlayer = MediaPlayer.create(this, R.raw.sound_16p);
         this.imageView = (ImageView) findViewById(R.id.imageView);
         this.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
