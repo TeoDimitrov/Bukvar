@@ -81,9 +81,16 @@ public class Level0102 extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        this.mediaPlayer.stop();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         this.mediaPlayer.release();
+        this.finish();
     }
 
     @Override
@@ -109,6 +116,7 @@ public class Level0102 extends AppCompatActivity {
                         //Set Activity
 
                         this.startActivity(this.resultActivity);
+                        this.finish();
                     } else {
                         // If not match
                         //Set Results
@@ -117,6 +125,7 @@ public class Level0102 extends AppCompatActivity {
 
                         //Set Activity
                         this.startActivity(this.resultActivity);
+                        this.finish();
                     }
                 }
                 break;

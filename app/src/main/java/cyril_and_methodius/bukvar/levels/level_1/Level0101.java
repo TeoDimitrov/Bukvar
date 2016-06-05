@@ -76,9 +76,16 @@ public class Level0101 extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        this.mediaPlayer.stop();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         this.mediaPlayer.release();
+        this.finish();
     }
 
     @Override
@@ -102,6 +109,7 @@ public class Level0101 extends AppCompatActivity {
                         ResultManager.setNextActivity(this.nextActivityClass);
                         ResultManager.setResultType("Success");
                         //Set Activity
+                        this.finish();
 
                         this.startActivity(this.resultActivity);
                     } else {
@@ -112,6 +120,7 @@ public class Level0101 extends AppCompatActivity {
 
                         //Set Activity
                         this.startActivity(this.resultActivity);
+                        this.finish();
                     }
                 }
                 break;
