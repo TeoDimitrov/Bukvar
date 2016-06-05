@@ -116,7 +116,6 @@ public class Level0102 extends AppCompatActivity {
                         //Set Activity
 
                         this.startActivity(this.resultActivity);
-                        this.finish();
                     } else {
                         // If not match
                         //Set Results
@@ -125,7 +124,6 @@ public class Level0102 extends AppCompatActivity {
 
                         //Set Activity
                         this.startActivity(this.resultActivity);
-                        this.finish();
                     }
                 }
                 break;

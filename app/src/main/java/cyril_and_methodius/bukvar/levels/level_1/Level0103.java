@@ -78,9 +78,16 @@ public class Level0103 extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        this.mediaPlayer.stop();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         this.mediaPlayer.release();
+        this.finish();
     }
 
     @Override

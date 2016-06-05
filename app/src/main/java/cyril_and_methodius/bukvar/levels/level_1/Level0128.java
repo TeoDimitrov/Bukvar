@@ -37,10 +37,10 @@ public class Level0128 extends AppCompatActivity {
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_1_28_jo_letter);
+        setContentView(R.layout.level_1_29_iu_letter);
 
         //Image Media Player
-        mediaPlayer = MediaPlayer.create(this, R.raw.sound_28jo);
+        mediaPlayer = MediaPlayer.create(this, R.raw.sound_29ui);
         this.imageView = (ImageView) findViewById(R.id.imageView);
         this.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +70,7 @@ public class Level0128 extends AppCompatActivity {
         this.gestureDetectorCompat = new GestureDetectorCompat(this, new MyGestureListener());
         this.nextActivityClass = Level0129.class;
         this.nextActivity = new Intent(this, this.nextActivityClass);
-        this.previusActivityClass = Level0130.class;
+        this.previusActivityClass = Level0127.class;
         this.previousActivity = new Intent(this, this.previusActivityClass);
 
         //Show Results
@@ -78,9 +78,16 @@ public class Level0128 extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        this.mediaPlayer.stop();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         this.mediaPlayer.release();
+        this.finish();
     }
 
     @Override

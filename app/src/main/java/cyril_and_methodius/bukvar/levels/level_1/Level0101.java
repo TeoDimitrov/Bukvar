@@ -110,7 +110,6 @@ public class Level0101 extends AppCompatActivity {
                         ResultManager.setResultType("Success");
                         //Set Activity
                         this.finish();
-
                         this.startActivity(this.resultActivity);
                     } else {
                         // If not match

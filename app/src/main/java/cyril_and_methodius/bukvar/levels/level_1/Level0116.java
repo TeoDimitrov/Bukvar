@@ -51,10 +51,11 @@ public class Level0116 extends AppCompatActivity {
 
         //Start Description
         this.startMediaPlayer();
-        this.mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+        this.mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer player) {
                 startSpeechRecognition();
-            }});
+            }
+        });
 
         //Speech Recognition
         this.speechRecognition = new SpeechRecognition(this);
@@ -78,9 +79,16 @@ public class Level0116 extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        this.mediaPlayer.stop();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         this.mediaPlayer.release();
+        this.finish();
     }
 
     @Override
@@ -143,11 +151,11 @@ public class Level0116 extends AppCompatActivity {
         }
     }
 
-    private void startSpeechRecognition(){
+    private void startSpeechRecognition() {
         speechRecognition.promptSpeechInput();
     }
 
-    private void startMediaPlayer(){
+    private void startMediaPlayer() {
         mediaPlayer.start();
     }
 }
