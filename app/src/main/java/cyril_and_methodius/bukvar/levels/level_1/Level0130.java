@@ -50,6 +50,13 @@ public class Level0130 extends AppCompatActivity {
             }
         });
 
+        //Start Description
+        this.startMediaPlayer();
+        this.mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+            public void onCompletion(MediaPlayer player) {
+                startSpeechRecognition();
+            }});
+
         //Speech Recognition
         this.speechRecognition = new SpeechRecognition(this);
         this.btnSpeak = (Button) findViewById(R.id.btnSpeak);
@@ -69,6 +76,12 @@ public class Level0130 extends AppCompatActivity {
 
         //Show Results
         this.resultActivity = new Intent(this, ResultManager.class);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.mediaPlayer.release();
     }
 
     @Override
